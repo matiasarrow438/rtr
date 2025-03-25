@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remember The Rugs (RTR)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h1>Remember The Rugs</h1>
+                <p>Honoring the fallen projects of crypto history</p>
+                <div class="contract-section">
+                    <span class="contract-label">Official CA:</span>
+                    <div class="contract-address">
+                        <code id="contractAddress">0x0000000000000000000000000000000000000000</code>
+                        <button class="copy-button" onclick="copyAddress()">
+                            <span class="copy-icon">📋</span>
+                            <span class="copy-text">Copy</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-arrow">↓</div>
+        </section>
+
+        <section id="rugs" class="rugs-section">
+            <div class="rugs-grid">
+                <!-- Rug cards will be dynamically added here -->
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        function copyAddress() {
+            const address = document.getElementById('contractAddress').textContent;
+            navigator.clipboard.writeText(address).then(() => {
+                const button = document.querySelector('.copy-button');
+                button.classList.add('copied');
+                setTimeout(() => button.classList.remove('copied'), 2000);
+            });
+        }
+
+        // Handle scroll arrow visibility
+        window.addEventListener('scroll', () => {
+            const scrollArrow = document.querySelector('.scroll-arrow');
+            if (window.scrollY > 100) {
+                scrollArrow.classList.add('fade-out');
+            } else {
+                scrollArrow.classList.remove('fade-out');
+            }
+        });
+    </script>
+</body>
+</html> 
