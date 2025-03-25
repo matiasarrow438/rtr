@@ -1,11 +1,15 @@
 /* Global Styles */
 :root {
-    --primary-color: #ff3366;
-    --secondary-color: #1a1a1a;
-    --background-color: #0a0a0a;
-    --text-color: #ffffff;
-    --card-background: #151515;
-    --accent-color: #ff6b6b;
+    --navy: #000066;
+    --cyan: #00e5ff;
+    --white: #ffffff;
+    --gray: #e0e0e0;
+    --red: #cc0000;
+    --background-color: var(--navy);
+    --text-color: var(--white);
+    --card-background: var(--navy);
+    --accent-color: #cc0000; /* dark red */
+    --light-gray: #e0e0e0;
     --gradient-1: linear-gradient(135deg, #ff3366, #ff6b6b);
     --gradient-2: linear-gradient(45deg, #ff3366, #ff6b6b);
     --text-bright: #ffffff;
@@ -20,9 +24,31 @@
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color);
+    background-color: var(--navy);
+    color: var(--white);
     line-height: 1.6;
+}
+
+/* Logo Styles */
+.logo-container {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    z-index: 3;
+}
+
+.hero-logo {
+    width: 80px;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 0 8px rgba(0, 229, 255, 0.2));
+    transition: transform 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+}
+
+.hero-logo:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 12px rgba(0, 229, 255, 0.4));
 }
 
 /* Hero Section */
@@ -32,8 +58,9 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: var(--background-color);
+    background: var(--navy);
     position: relative;
+    overflow: hidden;
 }
 
 .hero-content {
@@ -46,14 +73,14 @@ body {
 .hero-content h1 {
     font-size: 5rem;
     margin-bottom: 1rem;
-    color: var(--primary-color);
+    color: var(--cyan);
     letter-spacing: 2px;
 }
 
 .hero-content p {
     font-size: 1.4rem;
     margin-bottom: 2rem;
-    color: var(--text-color);
+    color: var(--gray);
     font-weight: 400;
 }
 
@@ -122,7 +149,7 @@ body {
 
 /* Rug Card Styles */
 .rug-card {
-    background-color: var(--card-background);
+    background-color: rgba(255, 255, 255, 0.02);
     border-radius: 15px;
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -132,25 +159,25 @@ body {
     height: 100%;
     max-width: 350px;
     margin: 0 auto;
-    border: 1px solid rgba(255, 51, 102, 0.1);
+    border: 1px solid var(--cyan);
 }
 
 .rug-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 12px 40px rgba(255, 51, 102, 0.15);
-    border-color: rgba(255, 51, 102, 0.2);
+    transform: translateY(-10px);
+    border-color: var(--red);
+    box-shadow: 0 12px 40px rgba(0, 229, 255, 0.1);
 }
 
 .rug-image {
     width: 100%;
     height: 120px;
     object-fit: contain;
-    background-color: var(--secondary-color);
+    background-color: rgba(255, 255, 255, 0.02);
     padding: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom: 1px solid rgba(255, 51, 102, 0.1);
+    border-bottom: 1px solid var(--cyan);
 }
 
 .rug-image img {
@@ -176,7 +203,7 @@ body {
 .rug-title {
     font-size: 1.4rem;
     margin-bottom: 1rem;
-    color: #ffffff;
+    color: var(--cyan);
     font-weight: 600;
 }
 
@@ -184,7 +211,7 @@ body {
     width: 100%;
     height: 300px;
     margin: 1rem 0;
-    background-color: var(--secondary-color);
+    background-color: rgba(255, 255, 255, 0.02);
     border-radius: 10px;
     overflow: hidden;
     display: flex;
@@ -192,7 +219,7 @@ body {
     justify-content: center;
     padding: 0;
     position: relative;
-    border: 1px solid rgba(255, 51, 102, 0.1);
+    border: 1px solid var(--cyan);
 }
 
 .rug-chart img {
@@ -206,7 +233,7 @@ body {
 
 .rug-story {
     font-size: 0.9rem;
-    color: #cccccc;
+    color: var(--gray);
     margin-bottom: 1rem;
     flex-grow: 1;
     line-height: 1.6;
@@ -214,11 +241,11 @@ body {
 
 .rug-details {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin-top: auto;
     padding-top: 1rem;
-    border-top: 1px solid rgba(255, 51, 102, 0.1);
+    border-top: 1px solid var(--cyan);
 }
 
 .rug-date {
@@ -229,10 +256,9 @@ body {
 }
 
 .rug-value {
-    color: var(--primary-color);
+    color: var(--white);
     font-weight: 600;
     font-size: 1rem;
-    text-shadow: 0 0 10px rgba(255, 51, 102, 0.5);
 }
 
 /* Responsive Design */
@@ -262,6 +288,18 @@ body {
 
     .hero-content p {
         font-size: 1.2rem;
+    }
+
+    .logo-container {
+        position: relative;
+        top: auto;
+        left: auto;
+        margin-bottom: 2rem;
+    }
+
+    .hero-logo {
+        margin: 0 auto;
+        width: 60px;
     }
 }
 
@@ -293,13 +331,14 @@ body {
 .contract-section {
     margin-top: 2rem;
     padding: 1rem;
-    background: rgba(255, 51, 102, 0.1);
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 8px;
     display: inline-block;
+    border: 1px solid var(--cyan);
 }
 
 .contract-label {
-    color: var(--text-color);
+    color: var(--white);
     font-size: 1rem;
     margin-right: 1rem;
 }
@@ -311,7 +350,7 @@ body {
 }
 
 .contract-address code {
-    color: var(--primary-color);
+    color: var(--cyan);
     font-family: monospace;
     font-size: 0.9rem;
     background: rgba(0, 0, 0, 0.2);
@@ -320,8 +359,8 @@ body {
 }
 
 .copy-button {
-    background: var(--primary-color);
-    color: white;
+    background: var(--cyan);
+    color: var(--navy);
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 4px;
@@ -331,10 +370,12 @@ body {
     gap: 0.5rem;
     font-size: 0.9rem;
     transition: all 0.2s ease;
+    font-weight: bold;
 }
 
 .copy-button:hover {
-    background: var(--accent-color);
+    background: var(--red);
+    color: var(--white);
 }
 
 .copy-button.copied {
@@ -380,24 +421,24 @@ body {
     left: 50%;
     transform: translateX(-50%);
     font-size: 2rem;
-    color: var(--primary-color);
+    color: var(--cyan);
     animation: bounce 2s infinite;
     cursor: pointer;
     opacity: 1;
     transition: opacity 0.3s ease;
-    text-shadow: 0 0 5px rgba(255, 51, 102, 0.3);
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.05);
     width: 50px;
     height: 50px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgba(255, 51, 102, 0.2);
+    border: 1px solid var(--cyan);
 }
 
-.scroll-arrow.fade-out {
-    opacity: 0;
+.scroll-arrow:hover {
+    color: var(--red);
+    border-color: var(--red);
 }
 
 @keyframes bounce {
