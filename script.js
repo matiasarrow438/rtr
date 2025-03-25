@@ -5,54 +5,54 @@ const rugs = [
         name: "Hawktua",
         image: "images/rugs/hawk.png",
         chartData: "images/charts/hawk.png",
-        story: "Hawktua was a promising project that attracted significant attention in the crypto community. Despite its initial success and growing community, the project's developers executed a rug pull, leaving investors with significant losses.",
-        date: "2024-03-25",
-        valueLost: "TBD"
+        story: "Hawktua was a promising project that promised to revolutionize the crypto space. However, it turned out to be a classic rug pull, leaving investors with significant losses.",
+        date: "2024-12-04",
+        valueLost: "Released: Dec 4, 2024"
     },
     {
         id: 2,
         name: "Dababy",
         image: "images/rugs/dababy.png",
         chartData: "images/charts/dababy.png",
-        story: "Dababy token, inspired by the famous rapper, quickly gained traction in the meme coin space. However, the project turned out to be a classic rug pull, leaving investors with worthless tokens.",
+        story: "Dababy token was launched with much fanfare but quickly turned into a rug pull, disappointing many investors who had high hopes for the project.",
         date: "2024-03-25",
-        valueLost: "TBD"
+        valueLost: "Released: Mar 25, 2024"
     },
     {
         id: 3,
         name: "Libra",
         image: "images/rugs/libra.png",
         chartData: "images/charts/libra.png",
-        story: "Libra token emerged as a promising project in the crypto space, but quickly turned into a rug pull, leaving investors with significant losses.",
-        date: "2024-03-25",
-        valueLost: "TBD"
+        story: "Libra token was marketed as a stable and reliable investment opportunity, but it turned out to be another rug pull in the crypto space.",
+        date: "2025-02-14",
+        valueLost: "Released: Feb 14, 2025"
     },
     {
         id: 4,
         name: "Trump",
         image: "images/rugs/trump.png",
         chartData: "images/charts/trump.png",
-        story: "Trump token, capitalizing on the former president's name, quickly gained attention in the meme coin market. However, it turned out to be another rug pull, leaving investors with losses.",
-        date: "2024-03-25",
-        valueLost: "TBD"
+        story: "Trump token was launched with political themes but quickly turned into a rug pull, leaving investors with significant losses.",
+        date: "2025-01-17",
+        valueLost: "Released: Jan 17, 2025"
     },
     {
         id: 5,
         name: "Melania",
         image: "images/rugs/Melania.png",
         chartData: "images/charts/Melania.png",
-        story: "Melania token, another Trump-themed meme coin, followed a similar pattern to other political meme tokens. Despite initial hype, it turned out to be a rug pull, leaving investors with losses.",
-        date: "2024-03-25",
-        valueLost: "TBD"
+        story: "Melania token was launched with political themes but quickly turned into a rug pull, leaving investors with significant losses.",
+        date: "2025-01-19",
+        valueLost: "Released: Jan 19, 2025"
     },
     {
         id: 6,
         name: "JellyJelly",
         image: "images/rugs/jellyjelly.png",
         chartData: "images/charts/jellyjelly.png",
-        story: "JellyJelly token emerged as a playful meme coin in the crypto space, but quickly turned into a rug pull, leaving investors with losses.",
+        story: "JellyJelly token was launched with much fanfare but quickly turned into a rug pull, disappointing many investors who had high hopes for the project.",
         date: "2024-03-25",
-        valueLost: "TBD"
+        valueLost: "Released: Mar 25, 2024"
     }
 ];
 
@@ -70,7 +70,6 @@ function createRugCard(rug) {
             </div>
             <p class="rug-story">${rug.story}</p>
             <div class="rug-details">
-                <span class="rug-date">${rug.date}</span>
                 <span class="rug-value">${rug.valueLost}</span>
             </div>
         </div>
